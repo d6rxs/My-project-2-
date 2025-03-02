@@ -13,16 +13,16 @@ public class AimTrainer : MonoBehaviour
     // public vars
     public PlayerMovement playerMovement;
     public GameObject circle;
+    public GameObject startButton;
     public float playerScore = 0;
     public TMP_Text aimScoreText;
 
 
 
 
+
+
     // private vars
-
-
-
 
 
     // Start is called before the first frame update
@@ -52,7 +52,7 @@ public class AimTrainer : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 5) && hit.collider.tag == "startButton")
             {
-                Destroy(GameObject.Find("startButton"));
+                startButton.gameObject.SetActive(false);
                 circle.SetActive(true);
             }
         }
@@ -77,6 +77,13 @@ public class AimTrainer : MonoBehaviour
                 float y = UnityEngine.Random.Range(1.02f, 1.2027f);
                 circle.transform.position = new Vector3(x, y, -3.4994f);
             }
+        }
+        else if (!playerMovement.isSitting)
+        {
+            startButton.gameObject.SetActive(true);
+            circle.SetActive(false);
+            aimScoreText.text = "";
+            playerScore = 0;
         }
     }
 
