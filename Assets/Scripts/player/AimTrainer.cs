@@ -14,7 +14,8 @@ public class AimTrainer : MonoBehaviour
     public PlayerMovement playerMovement;
     public GameObject circle;
     public GameObject startButton;
-    public float playerScore = 0;
+    public static int playerScore;
+    public static int bestScore;
     public TMP_Text aimScoreText;
 
 
@@ -30,6 +31,9 @@ public class AimTrainer : MonoBehaviour
     {
         playerMovement = GameObject.Find("playerCharacter").GetComponent<PlayerMovement>();
         circle.SetActive(false);
+        playerScore = 0;
+
+        bestScore = PlayerPrefs.GetInt("bestScore", bestScore);
     }
 
 
@@ -38,6 +42,7 @@ public class AimTrainer : MonoBehaviour
     {
         StartText();
         AimTrainingGame();
+        BestScoreText();
     }
 
     // StartText() checks if the player is sitting and has pressed the
@@ -71,6 +76,7 @@ public class AimTrainer : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 5) && hit.collider.tag == "circle")
             {
                 playerScore += 1;
+                bestScore += 1;
                 PlayerScoreText();
 
                 float x = UnityEngine.Random.Range(-2.2724f, -1.8286f);
@@ -90,7 +96,16 @@ public class AimTrainer : MonoBehaviour
 
     public void PlayerScoreText()
     {
-        aimScoreText.text = "Score: " + playerScore.ToString();
+        aimScoreText.text = "Score: " + playerScore.ToString() + "  Best: " + bestScore.ToString();
     }
+
+    public void BestScoreText()
+    {
+        if (playerScore > bestScore)
+        {
+            bestScore = playerScore;
+        }
+    }
+
 
 }
