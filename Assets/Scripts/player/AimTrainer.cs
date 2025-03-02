@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class AimTrainer : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class AimTrainer : MonoBehaviour
     public PlayerMovement playerMovement;
     public GameObject circle;
     public float playerScore = 0;
+    public TMP_Text aimScoreText;
 
 
 
@@ -69,13 +71,19 @@ public class AimTrainer : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 5) && hit.collider.tag == "circle")
             {
                 playerScore += 1;
+                PlayerScoreText();
+
                 float x = UnityEngine.Random.Range(-2.2724f, -1.8286f);
                 float y = UnityEngine.Random.Range(1.02f, 1.2027f);
-
                 circle.transform.position = new Vector3(x, y, -3.4994f);
             }
         }
     }
 
+
+    public void PlayerScoreText()
+    {
+        aimScoreText.text = "Score: " + playerScore.ToString();
+    }
 
 }
