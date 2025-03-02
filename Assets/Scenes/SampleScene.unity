@@ -3562,6 +3562,8 @@ MonoBehaviour:
   circle: {fileID: 15161676}
   playerScore: 0
   isSitting: 0
+  x: 0
+  y: 0
 --- !u!1001 &1034840915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7925,7 +7927,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100152, guid: f046b455d7b54e84db42d0171694e5e2,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1629786956}
+      addedObject: {fileID: 1629786958}
   m_SourcePrefab: {fileID: 100100000, guid: f046b455d7b54e84db42d0171694e5e2, type: 3}
 --- !u!4 &1609584593 stripped
 Transform:
@@ -7962,6 +7964,8 @@ MonoBehaviour:
   walkSpeed: 1
   lookSpeed: 2
   playerScore: 0
+  mousePos: {x: 0, y: 0, z: 0}
+  isMouse0Pressed: 0
 --- !u!143 &1609584596
 CharacterController:
   m_ObjectHideFlags: 0
@@ -8714,7 +8718,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1609584592}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1629786956
+--- !u!114 &1629786958
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8723,9 +8727,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 878586713}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 150877e9ab80b444887d674e143a0d14, type: 3}
+  m_Script: {fileID: 11500000, guid: b413843d3d2763849850461de0322be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 1609584595}
 --- !u!1 &1632967805 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6825328977708969489, guid: bfa974a01b4cbd94eb18f3e7956f9aca,

@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     // public vars
     public Camera playerCamera;
     public Animator animator;
-    public GameObject circle;
     public bool isSitting = false;
     public float gravity = 10f;
     public float lookXLimit = 100f;
@@ -23,10 +22,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public const float walkFOV = 61f;
     [SerializeField] public const float fovLerpSpeed = 5f;
 
-    //aim training game
-
-    public float playerScore = 0;
-
     // private vars
 
     private CharacterController characterController;
@@ -37,12 +32,12 @@ public class PlayerMovement : MonoBehaviour
     private bool canMove = true;
 
     // player inputs
-    Vector3 mousePos;
+    public Vector3 mousePos;
     private float mouseX = 0;
     private float mouseY = 0;
     private float joystickX = 0;
     private float joystickY = 0;
-    private bool isMouse0Pressed = false;
+    public bool isMouse0Pressed = false;
     private bool isEkeyPressed = false;
     private bool isQkeyPressed = false;
 
@@ -53,7 +48,6 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         characterController.height = defaultHeight;
         Cursor.visible = false;
-        circle.SetActive(false);
     }
 
     void Update()
@@ -67,8 +61,6 @@ public class PlayerMovement : MonoBehaviour
         CanSeat();
 
         // This should not be checked on every frame
-        StartText();
-        AimTrainingGame();
     }
 
     void LateUpdate()
@@ -76,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
         RotateCamera();
     }
 
-    void GetInputs()
+    public void GetInputs()
     {
         // Axis inputs
         joystickX = Input.GetAxis("Horizontal");
@@ -178,43 +170,6 @@ public class PlayerMovement : MonoBehaviour
             isSitting = false;
             canMove = true;
             lookXLimit = 100f;
-        }
-    }
-
-
-    void StartText()
-    {
-        if (isSitting && isMouse0Pressed)
-        {
-            RaycastHit hit;
-            Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit, 5) && hit.collider.tag == "startButton")
-            {
-                Destroy(GameObject.Find("startButton"));
-                circle.SetActive(true);
-            }
-        }
-    }
-
-    void AimTrainingGame() 
-    {
-        playerScore = 0;
-
-        if (isSitting && isMouse0Pressed)
-        {
-            RaycastHit hit;
-            Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit, 5) && hit.collider.tag == "circle")
-            {
-                // "Magic" numbers; TODO change for propper get x/y
-                float x = UnityEngine.Random.Range(-2.2724f, -1.8286f);
-                float y = UnityEngine.Random.Range(1.02f, 1.2027f);
-
-                circle.transform.position = new Vector3(x, y, -3.4994f);
-                playerScore++;
-            }
         }
     }
 

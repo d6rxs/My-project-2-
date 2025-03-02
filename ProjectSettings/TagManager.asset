@@ -10,6 +10,7 @@ TagManager:
   - CinemachineTarget
   - startButton
   - circle
+  - PlayerMovement
   layers:
   - Default
   - TransparentFX
