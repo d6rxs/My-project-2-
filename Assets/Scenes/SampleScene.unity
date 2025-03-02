@@ -1816,13 +1816,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.71037, y: -0.6910855, z: -0.03542861, w: 0.12853067}
+  m_LocalRotation: {x: 0.689643, y: -0.69844633, z: 0.1739921, w: -0.07932223}
   m_LocalPosition: {x: -3.101, y: 3.4, z: 0.988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 7.68, y: -166.7, z: -90.68}
+  m_LocalEulerAnglesHint: {x: 7.68, y: -200.73, z: -90.68}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3662,7 +3662,7 @@ GameObject:
   - component: {fileID: 1033757521}
   - component: {fileID: 1033757525}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: aimMinigame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5526,52 +5526,52 @@ PrefabInstance:
     - target: {fileID: 6511980077317001076, guid: 474131c860c2f554dac8d25c6d32a699,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9696927
+      value: -2.0408149
       objectReference: {fileID: 0}
     - target: {fileID: 6511980077317001076, guid: 474131c860c2f554dac8d25c6d32a699,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.020510256
+      value: -0.020508707
       objectReference: {fileID: 0}
     - target: {fileID: 6511980077317001076, guid: 474131c860c2f554dac8d25c6d32a699,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.090058
+      value: -4.0889874
       objectReference: {fileID: 0}
     - target: {fileID: 6511980077317001076, guid: 474131c860c2f554dac8d25c6d32a699,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.763548
+      value: -0.7079854
       objectReference: {fileID: 0}
     - target: {fileID: 6511980077317001076, guid: 474131c860c2f554dac8d25c6d32a699,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.0008194292
       objectReference: {fileID: 0}
     - target: {fileID: 6511980077317001076, guid: 474131c860c2f554dac8d25c6d32a699,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.6457511
+      value: -0.7062261
       objectReference: {fileID: 0}
     - target: {fileID: 6511980077317001076, guid: 474131c860c2f554dac8d25c6d32a699,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.00080508785
       objectReference: {fileID: 0}
     - target: {fileID: 6511980077317001076, guid: 474131c860c2f554dac8d25c6d32a699,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -0.132
       objectReference: {fileID: 0}
     - target: {fileID: 6511980077317001076, guid: 474131c860c2f554dac8d25c6d32a699,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -279.556
+      value: -270.143
       objectReference: {fileID: 0}
     - target: {fileID: 6511980077317001076, guid: 474131c860c2f554dac8d25c6d32a699,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -0.001
       objectReference: {fileID: 0}
     - target: {fileID: 6782704023307415781, guid: 474131c860c2f554dac8d25c6d32a699,
         type: 3}
@@ -9293,7 +9293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 1609584595}
   circle: {fileID: 15161676}
-  playerScore: 0
+  startButton: {fileID: 2026518328}
   aimScoreText: {fileID: 1351016571}
 --- !u!1 &1632967805 stripped
 GameObject:
